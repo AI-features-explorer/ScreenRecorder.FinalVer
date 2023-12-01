@@ -1,0 +1,121 @@
+﻿<Window x:Class="ScreenRecorder.FinalVer.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScreenRecorder.FinalVer"
+        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="LoginWindow" Height="450" Width="380"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border CornerRadius="10" Grid.RowSpan="2"  BorderBrush="DimGray" BorderThickness="2" Margin="0,0,0,-0.4">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF343030"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Вход"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="65"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <Border Width="250"
+                        Height="5"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+            </StackPanel>
+            
+
+
+
+            <StackPanel Grid.Row="1" >
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox x:Name="LoginText"
+                        FontFamily="Helvetica"
+                             Text="Логин"
+                             IsEditable="True"
+                             BorderThickness="0"
+                             Width="235"
+                             Opacity="1"
+                             Height="25"
+                             Margin="63,0,0,0"  
+                             Foreground="White" 
+                             FontSize="16" 
+                             OpacityMask="White"/>
+                    <!--<TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Username"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="63,0,0,0"/>-->
+                    <iconPacks:PackIconMaterial Kind="Account" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <PasswordBox x:Name="PasswordText"
+                        FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Password="Password"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="63,0,0,0"/>
+                    <iconPacks:PackIconMaterial Kind="Login" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,75,0,0">
+                    <Button x:Name="LoginButton" Width="100" Height="30" Content="Авторизация" Margin="20,0,0,0" Click="LoginButton_Click"/>
+                    <Button x:Name="ReisterButton" Width="100" Height="30" Content="Регистрация"  Margin="20,0,20,0" Click="ReisterButton_Click"/>
+                    <Button x:Name="CloseLogin" Width="100" Height="30" Content="Отмена" Click="CloseLogin_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

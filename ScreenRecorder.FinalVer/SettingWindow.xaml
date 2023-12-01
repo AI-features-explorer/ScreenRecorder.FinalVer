@@ -1,0 +1,113 @@
+﻿<Window x:Class="ScreenRecorder.FinalVer.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScreenRecorder.FinalVer"
+        mc:Ignorable="d"
+          xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="MainWindow" Height="645" Width="700" Loaded="Window_Loaded"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="CanResizeWithGrip" MouseDown="Window_MouseDown">
+    <Grid>
+
+
+        <Border CornerRadius="10" Grid.RowSpan="2" BorderBrush="DimGray" BorderThickness="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF343030"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <StackPanel>
+                    
+            <!--window contrioller-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,5,0">
+                <Button x:Name="CollapseButton" Width="20" Height="20" Click="CollapseButton_Click">
+                    <iconPacks:PackIconMaterial Kind="ArrowCollapse" 
+                                                    VerticalAlignment="Center" 
+                                                    HorizontalAlignment="Center" 
+                                                    Foreground="White" Width="10" Height="10"/>
+                </Button>
+                <Button  x:Name="ExpandButton" Width="20" Height="20" Click="ExpandButton_Click">
+                    <iconPacks:PackIconMaterial Kind="CropSquare" 
+                                                    VerticalAlignment="Center" 
+                                                    HorizontalAlignment="Center" 
+                                                    Foreground="White" Width="10" Height="10"/>
+                </Button>
+                <Button  x:Name="CloseButton" Width="20" Height="20" Click="CloseButton_Click">
+                    <iconPacks:PackIconMaterial Kind="Close" 
+                                                    VerticalAlignment="Center" 
+                                                    HorizontalAlignment="Center" 
+                                                    Foreground="White" Width="10" Height="10"/>
+                </Button>
+            </StackPanel>
+            
+            
+            <!--other controls-->
+            <StackPanel>
+                <GroupBox Background="#FF343030"  Header="Аудио" Foreground="White" FontFamily="helvetica" FontSize="12">
+                    <StackPanel Margin="0,10,0,0">
+                        <CheckBox x:Name="IsAudioRecodingMode" Content="Записывать аудио" Margin="0,0,0,10"/>
+                        <TextBlock Text="Устройство записи"/>
+                        <ComboBox x:Name="AudioSourceBox"/>
+                        <TextBlock Text="Режим записи"/>
+                        <ComboBox x:Name="RecorderModeBox" SelectionChanged="RecorderModeBox_SelectionChanged"/>
+                        <TextBlock Text="Битрейт"/>
+                        <ComboBox x:Name="BitrateBox"/>
+                        <TextBlock Text="Частота дискретизации"/>
+                        <ComboBox x:Name="SamplerateBox"/>
+                        <TextBlock Text="Каналы"/>
+                        <ComboBox x:Name="ChannnelsBox"/>
+                        <TextBlock Text="Глубина битов"/>
+                        <ComboBox x:Name="BitDepthBox"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Background="#FF343030"  Header="Видео" Foreground="White" FontFamily="helvetica" FontSize="12">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <TextBlock Text="Уровень сжатия записи" Margin="0,10,0,0"/>
+                        <Slider x:Name="PercentSlider" HorizontalAlignment="Stretch"
+                                IsSnapToTickEnabled="True"
+                                TickFrequency="1"
+                                Value="80" Minimum="20" Maximum="100" ValueChanged="PercentSlider_ValueChanged"/>
+                        <TextBlock x:Name="PescentText" HorizontalAlignment="Center" Text="80%"/>
+                    </StackPanel>
+                </GroupBox>
+
+
+                <GroupBox Background="#FF343030"  Header="Дополнительно" Foreground="White" FontFamily="helvetica" FontSize="12">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <CheckBox x:Name="TrackMouseMode" Content="Показывать курсор" Margin="0,10,0,0"/>
+
+                       
+                                <TextBlock Text="Расположение временной папки" Margin="0,10,0,0"/>
+                                <TextBox
+                                   x:Name="DirectoryText"
+                                    IsReadOnly="True"
+                                    FontFamily="Helvetica"
+                                     FontWeight="Light"
+                                     FontSize="14"
+                                     Foreground="White"
+                                     Background="#FF5C5959"
+                                     BorderThickness="0"
+                                     HorizontalContentAlignment="Left"
+                                     Opacity="0.5"/>
+                                <Border 
+                                    Height="2"
+                                    Background="White"
+                                     Opacity="0.5" Margin="0,0,0,10"/>
+                            
+                                <Button x:Name="TempFolderButton" FontSize="12" Content="Выбрать папку" Width="100" Height="25" HorizontalAlignment="Left" Click="TempFolderButton_Click"/>
+                          
+
+                        <StackPanel Orientation="Horizontal" Margin="0,14">
+                            <Button x:Name="SaveSettingsButton" FontSize="14" Content="Сохраниить настройки" Width="220" Height="30" Margin="70,0,110,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SaveSettingsButton_Click"/>
+                            <Button x:Name="CloseSettingsButton" FontSize="14" Content="Отмена" Width="220" Height="30" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Center" Click="CloseSettingsButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
