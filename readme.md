@@ -23,4 +23,6 @@ The base UI looks like then (WPF app):
 - Google Drive API
 - WPF user interface add-ons model
 
+---
+
 Creared in 2021 year.
